@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ISS Watching</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="img/satellite.png" type="image/x-icon">
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<h1>International Space Station (ISS)</h1>
+		</header>
+		<main>
+			<section class="info">
+				<div class="container">
+					<div class="info__row">
+						<div class="card">
+							<h2>Current location</h2>
+							<div id="map"></div>
+							<div class="coordinates">
+								<p>latitude: <span id="latitude">loading...</span>, longitude: <span id="longitude">loading...</span></p>
+							</div>
+						</div>
+
+						<div class="card">
+							<h2>Crew information</h2>
+							<p>Number of people: <span id="crew-count">loading...</span></p>
+							<ul id="crew-list">
+
+							</ul>
+						</div>
+
+						<div class="card time-card">
+							<h2>Current time (UTC)</h2>
+							<p id="utc-time">loading...</p>
+							<p>Data is updated every 5 seconds</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="satellite">
+				<div class="satellite__logo">
+					<img src="img/satellite.png" alt="satellite">
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="ticker__row">
+				<div class="ticker__content">
+					<p>The International Space Station (ISS) is hurtling through Earth's orbit at a speed of 27,700 km/h - it manages to circle the Earth almost 16 times per day! The station's program has ensured the continuous presence of humans in space since the launch of the first expedition on October 31, 2000...</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© 2025 Dmitriy Kurilekh</p>
+			</div>
+		</footer>
+	</div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+// Обнулення
+@import "_nullstyle";
+
+.wrapper {
+	font-family: 'Inter', sans-serif;
+	background: #0d1117;
+	color: #c9d1d9;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 1 auto;
+}
+
+header {
+   text-align: center;
+   padding-block: 1.25rem;
+}
+
+h1 {
+	font-size: 1.5em;
+}
+
+h2 {
+	border-bottom: 2px solid #30363d;
+	padding-bottom: 0.625rem;
+}
+
+.container {
+	padding-inline: 0.9375rem;
+	max-width: 75rem;
+	margin: 0 auto;
+}
+
+.info {
+	padding-bottom: 1.25rem;
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.25rem;
+	}
+}
+
+#map {
+	height: 18.75rem;
+	width: 100%;
+	border-radius: 8px;
+	border: 1px solid #30363d;
+}
+
+.card {
+	width: 23.5rem;
+	background-color: #161b22;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	padding: 1.25rem;
+}
+
+.coordinates p {
+   padding-top: 0.3125rem;
+}
+
+#crew-list li {
+	background-color: #21262d;
+	margin-bottom: 0.3125rem;
+	padding: 0.625rem;
+	border-radius: 5px;
+}
+
+#utc-time {
+   font-weight: bold;
+}
+
+.satellite {
+	padding-bottom: 1.25rem;
+	display: flex;
+	justify-content: center;
+	&__logo {
+		max-width: 18.75rem;
+		max-height: 18.75rem;
+		img {
+			animation: satellite-oscillate 10s ease-in-out infinite;
+    		transform-origin: center center; /* Точка обертання по центру */
+		}
+	}
+}
+
+@keyframes satellite-oscillate {
+	0% {
+		transform: rotate(0deg); /* Початковий стан */
+	}
+	25% {
+		transform: rotate(-10deg); /* Поворот на 10 градусів вліво */
+	}
+	50% {
+		transform: rotate(10deg); /* Поворот на 10 градусів вправо */
+	}
+	75% {
+		transform: rotate(0deg); /* Повернення до початкового стану */
+	}
+	80%, 100% {
+		transform: rotate(0deg); /* Пауза */
+	}
+}
+
+.ticker__row {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	background-color: #161b22;
+	padding-block: 0.625rem;
+	box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.ticker__content {
+   display: inline-block; /* Щоб анімація працювала коректно */
+   padding-left: 100%; /* Починаємо рух за межами екрану */
+   animation: ticker-scroll 30s linear infinite;
+}
+
+@keyframes ticker-scroll {
+   0% {
+      transform: translateX(0);
+   }
+   100% {
+      transform: translateX(-100%); /* Зміщуємо контент на повну ширину вліво */
+   }
+}
+
+.ticker__row:hover .ticker__content {
+   animation-play-state: paused;
+}
+
+.copyright {
+	background: #000;
+	padding-block: 1.25rem;
+	text-align: center;
+}
